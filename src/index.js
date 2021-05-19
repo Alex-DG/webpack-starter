@@ -1,3 +1,5 @@
+import './styles/main.scss'
+
 import example from './images/ocean.jpg'
 
 // Create a class property without a constructor

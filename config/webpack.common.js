@@ -23,14 +23,15 @@ module.exports = {
    * Internal webpack code and third party extensions use plugins.
    */
   plugins: [
+    // Clears out anything in the dist folder after each build. This is important to ensure no old data gets left behind.
+    new CleanWebpackPlugin(),
+
     // Inject the script automatically in the HTML template page
     new HtmlWebpackPlugin({
       title: 'webpack Boilerplate',
       template: path.resolve(__dirname, './src/template.html'), // template file
       filename: 'index.html', // output file
     }),
-    // Clears out anything in the dist folder after each build. This is important to ensure no old data gets left behind.
-    new CleanWebpackPlugin(),
   ],
 
   /**
@@ -55,6 +56,12 @@ module.exports = {
       {
         test: /\.(woff(2)?|eot|ttf|otf|svg|)$/,
         type: 'asset/inline',
+      },
+
+      // CSS, PostCSS, and Sass
+      {
+        test: /\.(scss|css)$/,
+        use: ['style-loader', 'css-loader', 'postcss-loader', 'sass-loader'],
       },
     ],
   },
