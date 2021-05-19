@@ -49,6 +49,17 @@ module.exports = {
         use: ['babel-loader'], // Transpile files with Babel and webpack.
       },
 
+      /**
+       * Exports HTML as string. HTML is minimized when the compiler demands
+       * i.e: src=".images/ocean.jpg"
+       *
+       * doc:https://webpack.js.org/loaders/html-loader/
+       */
+      {
+        test: /\.html$/i,
+        loader: 'html-loader',
+      },
+
       // Images
       {
         test: /\.(?:ico|gif|png|jpg|jpeg)$/i,
