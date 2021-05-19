@@ -1,5 +1,6 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 
 module.exports = {
   // Entry: what file or files webpack will look at to compile.
@@ -18,5 +19,7 @@ module.exports = {
       template: path.resolve(__dirname, './src/template.html'), // template file
       filename: 'index.html', // output file
     }),
+    // Clears out anything in the dist folder after each build. This is important to ensure no old data gets left behind.
+    new CleanWebpackPlugin(),
   ],
 }
