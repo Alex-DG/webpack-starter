@@ -44,6 +44,12 @@ module.exports = {
         exclude: /node_modules/,
         use: ['babel-loader'], // Transpile files with Babel and webpack.
       },
+
+      // Images
+      {
+        test: /\.(?:ico|gif|png|jpg|jpeg)$/i,
+        type: 'asset/resource',
+      },
     ],
   },
 }

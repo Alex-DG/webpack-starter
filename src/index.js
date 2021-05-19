@@ -1,3 +1,5 @@
+import example from './images/ocean.jpg'
+
 // Create a class property without a constructor
 class Game {
   name = 'Violin Charades'
