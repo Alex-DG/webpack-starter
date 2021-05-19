@@ -26,6 +26,6 @@ yarn-error.log*
 .vercel
 
 #build files
- dist/
+/dist
 /build
 .vscode/*
