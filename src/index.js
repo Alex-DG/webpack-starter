@@ -1,6 +1,8 @@
-import './styles/main.scss'
+import './styles/index.scss'
 
 import example from './images/ocean.jpg'
+
+console.log('Interesting!')
 
 // Create a class property without a constructor
 class Game {

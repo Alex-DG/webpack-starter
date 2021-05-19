@@ -1,13 +1,15 @@
 const webpack = require('webpack')
+const { merge } = require('webpack-merge')
 
 const commonConfiguration = require('./webpack.common.js')
+const paths = require('./paths')
 
 module.exports = merge(commonConfiguration, {
   /* ... */
   mode: 'development',
   devServer: {
     historyApiFallback: true,
-    contentBase: path.resolve(__dirname, './dist'),
+    contentBase: paths.build,
     open: true,
     compress: true,
     hot: true,
